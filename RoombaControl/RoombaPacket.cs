@@ -5,6 +5,15 @@ public class RoombaPacket
     public const int BAUD_19200 = 7;
     public const int BAUD_115200 = 11;
 
+    public const byte DO_ = 60; //_はdoが予約語のせい
+    public const byte LE_ = 62;
+    public const byte MI_ = 64;
+    public const byte FA_ = 65;
+    public const byte SO_ = 67;
+    public const byte LA_ = 69;
+    public const byte SI_ = 71;
+
+
     public RoombaPacket()
     {
     }
@@ -66,12 +75,12 @@ public class RoombaPacket
         //convert HEX
         byte[] velocity_bytes = BitConverter.GetBytes((UInt16)velocity);
         byte[] radius_bytes = BitConverter.GetBytes((UInt16)0x7FFF);
-        
+
         byte[] packet = new byte[] { 137, velocity_bytes[1], velocity_bytes[0], radius_bytes[1], radius_bytes[0] };
         return packet;
     }
 
-    
+
     public byte[] Drive_Turn(bool clockwise, int velocity)
     {
         int direct;
@@ -83,11 +92,11 @@ public class RoombaPacket
         //convert HEX
         byte[] velocity_bytes = BitConverter.GetBytes((UInt16)velocity);
         byte[] radius_bytes = BitConverter.GetBytes((UInt16)direct);
-        
+
         byte[] packet = new byte[] { 137, velocity_bytes[1], velocity_bytes[0], radius_bytes[1], radius_bytes[0] };
         return packet;
     }
-    
+
 
     public byte[] Motors(bool mainb_direct, bool sideb_direct, bool mainbrush, bool vaccum, bool sidebrush)
     {
@@ -97,10 +106,94 @@ public class RoombaPacket
         data += (mainbrush) ? 4 : 0;
         data += (vaccum) ? 2 : 0;
         data += (sidebrush) ? 1 : 0;
-        
 
-        byte[] packet = new byte[] { 138, Convert.ToByte(data)}; 
+
+        byte[] packet = new byte[] { 138, Convert.ToByte(data) };
+
+        return packet;
+    }
+
+    //--------------------------------------------------------------------------
+
+
+
+    public byte[] Song()
+    {
+        byte songID = 0; //todo
+        byte songLength = 4;
+        byte[] packet = new byte[] { 140, songID, songLength, 50, 100, 50, 100, 50, 100, 50, 100 };
+        return packet;
+    }
+
+    public byte[] Play()
+    {
+
+        byte songID = 0; //todo
+        byte[] packet = new byte[] { 141, songID };
+        return packet;
+    }
+
+    public byte[] FamilyMart(byte songID)
+    {
+        byte[] packet = new byte[] { 140, songID, 12,
+            FA_+1, 30, 
+            LE_, 30, 
+            LA_, 30, 
+            LE_, 50, 
             
+            MI_, 30, 
+            LA_, 30, 
+            LA_, 50, 
+            
+            MI_, 30, 
+            FA_+1, 30, 
+            MI_, 30, 
+            LA_, 30, 
+            LE_, 100, 
+            };
+        return packet;
+    }
+
+    public byte[] Frog1(byte songID)
+    {
+        byte[] packet = new byte[] { 140, songID, 14,
+            DO_, 30, 
+            LE_, 30, 
+            MI_, 30, 
+            FA_, 30, 
+            MI_, 30, 
+            LE_, 30, 
+            DO_, 50, 
+            
+            MI_, 30, 
+            FA_, 30, 
+            SO_, 30, 
+            LA_, 30, 
+            SO_, 30, 
+            FA_, 30, 
+            MI_, 50
+        };
+
+        return packet;
+    }
+
+    public byte[] Frog2(byte songID)
+    {
+        byte[] packet = new byte[] { 140, songID, 11,
+            DO_, 50, 
+            DO_, 50, 
+            DO_, 50, 
+            DO_, 50, 
+            
+            DO_, 30, 
+            LE_, 30, 
+            MI_, 30, 
+            FA_, 30, 
+            MI_, 30, 
+            LE_, 30, 
+            DO_, 50, 
+        };
+
         return packet;
     }
 }

@@ -272,5 +272,45 @@ namespace RoombaControl
         {
             label_keycontrol.Focus();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sendPacket(roombaPacket.FamilyMart(0));
+        }
+
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            sendPacket(roombaPacket.Play());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            sendPacket(roombaPacket.Frog2(0));
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            sendPacket(roombaPacket.Frog1(0));
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

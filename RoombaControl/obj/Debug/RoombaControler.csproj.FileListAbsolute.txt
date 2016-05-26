@@ -34,3 +34,12 @@ C:\Users\AISLAB\Desktop\RoombaControl\RoombaControl\obj\Debug\RoombaControler.cs
 C:\Users\AISLAB\Desktop\RoombaControl\RoombaControl\obj\Debug\RoombaControl.Properties.Resources.resources
 C:\Users\AISLAB\Desktop\RoombaControl\RoombaControl\obj\Debug\RoombaControl.RoombaControler.resources
 C:\Users\AISLAB\Desktop\RoombaControl\RoombaControl\obj\Debug\RoombaControler.csproj.GenerateResource.Cache
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\bin\Debug\RoombaControl.exe.config
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\obj\Debug\RoombaControl.exe
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\obj\Debug\RoombaControl.pdb
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\obj\Debug\RoombaControler.csprojResolveAssemblyReference.cache
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\obj\Debug\RoombaControl.Properties.Resources.resources
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\obj\Debug\RoombaControl.RoombaControler.resources
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\obj\Debug\RoombaControler.csproj.GenerateResource.Cache
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\bin\Debug\RoombaControl.exe
+C:\Users\Nakata\Dropbox\[Program]\C#\RoombaControl\RoombaControl\bin\Debug\RoombaControl.pdb
